@@ -23,12 +23,10 @@ func (s *APIServer) Run() error {
 		w.Write([]byte("User ID: " + userID))
 	})
 
-	server := http.Server {
-		Addr: s.addr,
+	server := http.Server{
+		Addr:    s.addr,
 		Handler: router,
 	}
-
-
 
 	log.Printf("Server listening %s", s.addr)
 	return server.ListenAndServe()
